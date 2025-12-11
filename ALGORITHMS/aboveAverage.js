@@ -20,10 +20,13 @@ Input: [2, 6, 3, 8, 4]
 Average = (2+6+3+8+4) / 5 = 4.6
 Output: [6, 8]
 */
+/* ======================================
+     CODE WRITTEN BY ME, WORKS.
+ ======================================
+ */
 
-// CODE WRITTEN BY ME, WORKS.
+// (ATTEMPY # 1)
 a = [2,6,3,8,4];
-const AVERAGE = 0;
 
 let added = 0;
 let length = a.length;
@@ -37,33 +40,3 @@ a.map((ele) => {
         console.log(ele)
     };
 });
-
-/* 
-score around 7/10.
-
-Pros (following the problem statement)
-✅ Original array is not modified.
-✅ Correctly calculates the sum and average.
-✅ Filters numbers greater than the average.
-
-Cons / Does not fully meet requirements
-⚠️ Doesn’t return a new array – the requirement says the result should be an array, not just printed values.
-⚠️ Uses map instead of proper iteration – map is meant for transforming arrays, not side-effects.
-⚠️ Unused variable – const AVERAGE = 0 isn’t used.
-*/
-
-
-// CLEANER CODE (BY CHATGPT)
-const numbers = [2, 6, 3, 8, 4];
-
-let sum = 0;
-for (const n of numbers) sum += n;
-
-const avg = sum / numbers.length;
-
-const aboveAvg = [];
-for (const n of numbers) {
-  if (n > avg) aboveAvg.push(n);
-};
-
-console.log(aboveAvg); // [6, 8]
