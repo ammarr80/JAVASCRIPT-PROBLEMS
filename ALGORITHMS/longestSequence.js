@@ -46,3 +46,7 @@ array.map((digit) => {
 });
 const newArray = [...new Set(nearbyValues)];
 console.log(newArray.length);
+
+/* 
+========================================================= to be continued, will do later.
+*/
