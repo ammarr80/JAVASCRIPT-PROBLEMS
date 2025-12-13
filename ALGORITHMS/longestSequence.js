@@ -46,18 +46,8 @@ array.map((digit) => {
         nearbyValues.push(number + 1);
         nearbyValues.push(number);
     };
-
-    if (!next) {
-        
-    }
-
-    if (!prev) {
-        sequence.push(number);
-        sequence.push(number + 1);
-    }
-    newArray = [...new Set(nearbyValues)];   
-    newSequence = [...new Set(sequence)];
+    
     
 });
-console.log(newArray);
-console.log(newSequence);
+const newArray = [...new Set(nearbyValues)];
+console.log(newArray.length);
