@@ -24,26 +24,40 @@ Output: 4
 */
 
 
-let array = [1,2,3,100,101,102];
+let array = [1,2,3,100,101,102,103];
+
 let nearbyValues = [];
 let sequence = [];
 
 const set = new Set(array);
 
+let newArray = null;
+let newSequence = null;
 array.map((digit) => {
     let number = digit;
-    
+    nearbyValues.push(digit);
+
     let next = set.has(number + 1);
     let prev = set.has(number - 1);
-    
-    if (next && prev) {
+    let doublePrev = set.has(number - 2);
+
+    if (next && prev && doublePrev) {
         nearbyValues.push(number - 1);
         nearbyValues.push(number + 1);
         nearbyValues.push(number);
-
     };
-    
+
+    if (!next) {
+        
+    }
+
+    if (!prev) {
+        sequence.push(number);
+        sequence.push(number + 1);
+    }
+    newArray = [...new Set(nearbyValues)];   
+    newSequence = [...new Set(sequence)];
     
 });
-const newArray = [...new Set(nearbyValues)];
-console.log(newArray.length);
+console.log(newArray);
+console.log(newSequence);
