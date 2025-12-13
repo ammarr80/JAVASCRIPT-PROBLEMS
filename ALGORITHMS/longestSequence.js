@@ -24,9 +24,9 @@ Output: 4
 */
 
 
-let array = [1,2,3,4,7,81,0];
+let array = [1,2,3,100,101,102];
 let nearbyValues = [];
-let smaller = [];
+let sequence = [];
 
 const set = new Set(array);
 
@@ -40,6 +40,7 @@ array.map((digit) => {
         nearbyValues.push(number - 1);
         nearbyValues.push(number + 1);
         nearbyValues.push(number);
+
     };
     
     
